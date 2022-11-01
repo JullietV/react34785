@@ -1,5 +1,4 @@
-import Button from './components/commons/Button';
-import ItemListContainer from './components/commons/ItemListContainer';
+import ItemListContainer from './components/Items/ItemListContainer';
 import NavBar from './components/Layout/NavBar';
 
 function App() {
@@ -9,8 +8,9 @@ function App() {
         <NavBar />
       </header>
       <div className='pt-24 mx-auto max-w-6xl'>
-        <ItemListContainer greeting="¡Hola! ¿Qué necesitas hoy? ✨" />
+        <ItemListContainer />
       </div>
+      
     </div>
   );
 }
