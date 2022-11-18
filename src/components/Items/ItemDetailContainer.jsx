@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getItemFromAPI } from "../../mockService";
 import Loader from "../commons/Loader";
 import LoaderContainer from "../commons/LoaderContainer";
-import Item from "./Item";
+import ItemDetail from "./ItemDetail";
 
 export default function ItemDetailContainer () {
   const [item, setItem] = useState({})
   const [isLoading, setIsLoading] = useState(false)
 
+  const {id} = useParams()
+
   const getItem = async () => {
     setIsLoading(true)
-    const itemDB = await getItemFromAPI(1)
-    console.log({itemDB})
+    const itemDB = await getItemFromAPI(parseInt(id))
     setItem(itemDB)
     setIsLoading(false)
   }
@@ -25,7 +27,7 @@ export default function ItemDetailContainer () {
       {isLoading ? 
       (<LoaderContainer>
         <Loader />
-      </LoaderContainer>) : <Item item={item} /> }
+      </LoaderContainer>) : <ItemDetail item={item} /> }
     </>
   )
 }

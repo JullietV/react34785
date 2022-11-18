@@ -7,7 +7,8 @@ export const data = [
     categoryID: 2,
     features: ['Serie', 'Emotivo'],
     price: 2500,
-    pictureUrl: '/categories/distraccion.png'
+    pictureUrl: '/categories/distraccion.png',
+    stock: 1
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const data = [
     categoryID: 1,
     features: ['Texto', 'Emotivo', 'Motivador'],
     price: 500,
-    pictureUrl: '/categories/apoyo.png'
+    pictureUrl: '/categories/apoyo.png',
+    stock: 3
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ export const data = [
     categoryID: 3,
     features: ['Noticia', 'Emotivo'],
     price: 500,
-    pictureUrl: '/categories/buenas-noticias.png'
+    pictureUrl: '/categories/buenas-noticias.png',
+    stock: 1
   },
   {
     id: 4,
@@ -37,7 +40,8 @@ export const data = [
     categoryID: 2,
     features: ['Película', 'Emotivo'],
     price: 2500,
-    pictureUrl: '/categories/distraccion.png'
+    pictureUrl: '/categories/distraccion.png',
+    stock: 1
   },
 ]
 

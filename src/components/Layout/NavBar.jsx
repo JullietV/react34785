@@ -12,13 +12,13 @@ function NavBar () {
         </h1>
         <ul className='flex gap-6'>
           <li>
-            <Link to="/category/apoyo"><a className='text-green-500 hover:text-green-700'>Apoyo</a></Link>
+            <Link to="/category/apoyo" className='text-green-500 hover:text-green-700'>Apoyo</Link>
           </li>
           <li>
-            <Link to="/category/distracci%C3%B3n"><a className='text-green-500 hover:text-green-700'>Distracción</a></Link>
+            <Link to="/category/distracci%C3%B3n" className='text-green-500 hover:text-green-700'>Distracción</Link>
           </li>
           <li>
-            <Link to="/category/buenas%20noticias"><a className='text-green-500 hover:text-green-700'>Buenas noticias</a></Link>
+            <Link to="/category/buenas%20noticias" className='text-green-500 hover:text-green-700'>Buenas noticias</Link>
           </li>
         </ul>
         <CartWidget />
