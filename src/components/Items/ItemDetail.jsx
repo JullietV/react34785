@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../commons/Button";
 import ItemCount from "./ItemCount";
 
+import Context from '../../storage/Context'
+
 export default function ItemDetail ({item}) {
-  const [isInCart, setIsInCart] = useState(false)
+  const { cart, addToCart } = useContext(Context)
+  const [ isInCart, setIsInCart ] = useState(false)
 
   const handleOnAdd = (count) => {
     const payload = {
       ...item,
       count
     }
-
+    
+    addToCart(payload)
     setIsInCart(true)
   }
 
@@ -36,7 +40,7 @@ export default function ItemDetail ({item}) {
           
           {
             !isInCart
-            ? (<ItemCount stock={item.stock} onAdd={() => handleOnAdd()} />)
+            ? (<ItemCount stock={item.stock} onAdd={handleOnAdd} />)
             : (<div className="flex justify-between mt-4">
                 <Link to="/"><Button type="text">Seguir comprando</Button></Link>
                 <Link to="/cart"><Button type="primary">Ir al carrito</Button></Link>
