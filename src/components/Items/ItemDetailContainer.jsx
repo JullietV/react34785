@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getItemFromAPI } from "../../mockService";
+import { getItemFromAPI } from "../../services/firebase";
 import Loader from "../commons/Loader";
 import LoaderContainer from "../commons/LoaderContainer";
 import ItemDetail from "./ItemDetail";
@@ -13,7 +13,7 @@ export default function ItemDetailContainer () {
 
   const getItem = async () => {
     setIsLoading(true)
-    const itemDB = await getItemFromAPI(parseInt(id))
+    const itemDB = await getItemFromAPI(id)
     setItem(itemDB)
     setIsLoading(false)
   }

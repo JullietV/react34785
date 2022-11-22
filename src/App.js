@@ -4,10 +4,8 @@ import ItemDetailContainer from './components/Items/ItemDetailContainer';
 import ItemListContainer from './components/Items/ItemListContainer';
 import NavBar from './components/Layout/NavBar';
 import { ContextProvider } from './storage/Context';
-import { testDB } from './services/firebase'
 
 function App() {
-  testDB()
   return (
     <div className="App">
       <ContextProvider>
@@ -15,15 +13,23 @@ function App() {
           <header className="App-header">
             <NavBar />
           </header>
-          <div className='pt-24 mx-auto max-w-6xl'>
-            <Routes>
-              <Route path="/" element={<ItemListContainer />} />
-              <Route path="/category/:id" element={<ItemListContainer />} />
-              <Route path="/item/:id" element={<ItemDetailContainer />} />
-              <Route path="/cart" element={<Cart />} />
-            </Routes>
-          </div>
+          <main className='min-h-[75vh]'>
+            <div className='pt-24 mx-auto max-w-6xl'>
+              <Routes>
+                <Route path="/" element={<ItemListContainer />} />
+                <Route path="/category/:id" element={<ItemListContainer />} />
+                <Route path="/item/:id" element={<ItemDetailContainer />} />
+                <Route path="/cart" element={<Cart />} />
+              </Routes>
+            </div>
+          </main>
         </BrowserRouter>
+        <footer className='mt-14'>
+          <div className='flex items-center justify-between max-w-7xl mx-auto relative h-[300px]'>
+            <img className='w-full absolute bottom-0' alt="" src="/img/footer-bg.svg" />
+            <img className='absolute bottom-14 right-[17%]' alt="dog with a lease in its mouth" src='/img/footer-dog.png' />
+          </div>
+        </footer>
       </ContextProvider>
     </div>
   );

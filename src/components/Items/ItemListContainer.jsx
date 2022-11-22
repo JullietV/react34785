@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import ItemList from "./ItemList";
-import { getItemsFromAPIByCategory, getItemsFromAPI } from '../../mockService'
 import { useParams } from 'react-router-dom';
 import Loader from '../commons/Loader';
 import LoaderContainer from '../commons/LoaderContainer';
+import { getItemsFromAPI, getItemsFromAPIByCategory } from '../../services/firebase';
 
 export default function ItemListContainer () {
   const [items, setItems] = useState([])
@@ -17,7 +17,7 @@ export default function ItemListContainer () {
 
     if (id) {
       itemsDB = await getItemsFromAPIByCategory(id)
-      setGreeting(itemsDB[0].category)
+      if (itemsDB && itemsDB.length) setGreeting(itemsDB[0].category)
     } else {
       itemsDB = await getItemsFromAPI()
       setGreeting('Favoritos del mes')
@@ -31,12 +31,16 @@ export default function ItemListContainer () {
     getItems()
   }, [id])
 
+  if (isLoading) return (
+    <LoaderContainer>
+      <Loader />
+    </LoaderContainer>
+  )
+
   return (
     <>
-      {isLoading ? 
-      (<LoaderContainer>
-        <Loader />
-      </LoaderContainer>) : <ItemList greeting={greeting} items={items} />}
+      {items && items.length ? 
+      <ItemList greeting={greeting} items={items} /> : <h2>Acá no hay nada compa</h2>}
     </>
   )
 }

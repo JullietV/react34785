@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs, doc, getDoc, query, where } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: "AIzaSyCkUpVFXEidvBoO4Yow2cwA8q32stDa9Fo",
@@ -11,7 +12,54 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
-
+const DB = getFirestore(firebaseApp)
 export function testDB () {
   console.log(firebaseApp)
+}
+
+export async function getItemsFromAPI () {
+  try {
+    const ref = collection(DB, 'products')
+    const { docs } = await getDocs(ref)
+    return docs.map(doc => {
+      return {
+        ...doc.data(),
+        id: doc.id
+      }
+    })
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+export async function getItemFromAPI (id) {
+  const docRef = doc(DB, 'products', id)
+  const snap = await getDoc(docRef);
+
+  if (snap.exists()) {
+    return {
+      ...snap.data(),
+      id: snap.id
+    }
+  } else {
+    console.error('Este producto no existe')
+  }
+}
+
+export async function getItemsFromAPIByCategory (cat) {
+  const productsRef = collection(DB, 'products')
+  const q = query(productsRef, where('category', '==', cat))
+  const {docs} = await getDocs(q)
+
+  if (docs && docs.length) {
+    return docs.map(doc => {
+      return {
+        ...doc.data(),
+        id: doc.id
+      }
+    })
+  } else {
+    console.error('No se consiguieron documentos en la categoría que estás buscando')
+    return null
+  }
 }
