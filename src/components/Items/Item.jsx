@@ -27,7 +27,7 @@ function Item ({item}) {
       </div>
       <p className='mb-2'>{item.description}</p>
       {item.features && item.features.map(feature => (
-        <span key={`${item.id}${feature}`} className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800">
+        <span key={`${item.id}${feature}`} className="inline-flex mr-2 items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-800">
           {feature}
         </span>)
       )}

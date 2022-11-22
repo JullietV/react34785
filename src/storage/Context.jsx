@@ -19,6 +19,14 @@ export function ContextProvider (props) {
       setCart(newCart)
     }
   }
+  
+  function substractToCart (item) {
+    const index = cart.findIndex(x => x.id === item.id)
+    let newCart = [...cart]
+
+    newCart[index].count = newCart[index].count - 1
+    setCart(newCart)
+  }
 
   function removeItem (id) {
     const index = cart.findIndex(x => x.id === id)
@@ -43,6 +51,7 @@ export function ContextProvider (props) {
   const value = {
     cart,
     addToCart,
+    substractToCart,
     removeItem,
     clearCart,
     isInCart
