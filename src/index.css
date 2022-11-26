@@ -19,17 +19,17 @@ code {
 
 
 .btn-primary {
-  @apply bg-green-500 text-white hover:bg-green-600 py-2 px-4 rounded-full;
+  @apply bg-[#7A84DD] text-white hover:bg-[#5C69DB] py-2 px-4 rounded-full;
 }
 
 .btn-secondary {
-  @apply bg-blue-300 hover:bg-blue-400  text-white py-2 px-4 rounded-full;
+  @apply bg-[#7ADDC5] hover:bg-[#59DFBF]  text-white py-2 px-4 rounded-full;
 }
 
 .btn-text {
-  @apply bg-white text-green-500 hover:bg-gray-100 py-2 px-4 rounded-md;
+  @apply bg-white text-[#7A84DD] hover:bg-gray-100 py-2 px-4 rounded-md;
 }
 
 .btn-icon {
-  @apply bg-white bg-blue-300  hover:bg-blue-400 text-white  py-2 px-3 rounded-full;
+  @apply bg-white bg-[#7ADDC5] hover:bg-[#59DFBF] text-white  py-2 px-3 rounded-full;
 }

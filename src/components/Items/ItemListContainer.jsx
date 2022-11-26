@@ -40,7 +40,12 @@ export default function ItemListContainer () {
   return (
     <>
       {items && items.length ? 
-      <ItemList greeting={greeting} items={items} /> : <h2>Acá no hay nada compa</h2>}
+      <ItemList greeting={greeting} items={items} /> : 
+      <div className='w-full min-h-[75vh] flex flex-col justify-center items-center'>
+        <img src="/img/cat.png" alt="A cute cat" />
+        <h2 className='text-xl font-bold'>No hemos conseguido nada</h2>
+        <p>El gato se durmió encima de los archivos</p>
+      </div>}
     </>
   )
 }
