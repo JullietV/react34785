@@ -19,7 +19,7 @@ function ItemCart ({item, handleRemoveItem, handleSubstract, handleAdd}) {
   return (
     <div className="relative bg-white border py-4 px-2 rounded-xl mt-8 pt-8">
       <div className="absolute -top-8 h-16 w-16 mb-4 flex items-center justify-center rounded-full bg-gray-200">
-        <img className="h-14" src={item.pictureUrl} alt={item.title} />
+        <img className="h-14" src={`/categories/${item.category}.png`} alt={item.title} />
       </div>
       <div className="flex justify-between mb-2">
         <h4 className='font-semibold text-lg'>{item.title}</h4>
