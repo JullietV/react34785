@@ -6,7 +6,7 @@ import ItemCart from './ItemCart'
 import Summary from './Summary'
 
 export default function Cart () {
-  const { cart, substractToCart, addToCart, removeItem } = useContext(Context)
+  const { cart, substractToCart, addToCart, removeItem, calcSummary } = useContext(Context)
 
   return (<>
     <div className="grid grid-cols-12 gap-4">
@@ -27,7 +27,7 @@ export default function Cart () {
             />)}
           </div>
           <div className="col-span-5">
-            <Summary cart={cart} />
+            <Summary summary={calcSummary} />
           </div>
         </>
       ) : (<>

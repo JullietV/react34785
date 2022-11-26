@@ -48,13 +48,31 @@ export function ContextProvider (props) {
     return index > -1
   }
 
+  function calcSummary () {
+    let subtotal = 0
+    cart.forEach(item => {
+      subtotal = subtotal + (item.count * item.price)
+    })
+    const delivery = 2000
+    const iva = subtotal * 0.019
+    const total = subtotal + delivery + iva
+
+    return {
+      subtotal,
+      delivery,
+      iva,
+      total
+    }
+  }
+
   const value = {
     cart,
     addToCart,
     substractToCart,
     removeItem,
     clearCart,
-    isInCart
+    isInCart,
+    calcSummary
   }
   return <Context.Provider value={value}>{props.children}</Context.Provider>
 }
