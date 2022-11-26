@@ -13,6 +13,7 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 const DB = getFirestore(firebaseApp)
+
 export function testDB () {
   console.log(firebaseApp)
 }
@@ -62,6 +63,14 @@ export async function getItemsFromAPIByCategory (cat) {
     console.error('No se consiguieron documentos en la categoría que estás buscando')
     return null
   }
+}
+
+export async function createProduct (product) {
+  console.log(product)
+  const docRef = await addDoc(collection(DB, 'products'), product)
+  console.log(`Doc written with id ${docRef.id}`)
+
+  return docRef
 }
 
 export async function createBuyOrderData (order) {

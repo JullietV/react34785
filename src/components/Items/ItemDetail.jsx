@@ -25,7 +25,7 @@ export default function ItemDetail ({item}) {
         <h2 className="text-2xl font-bold mb-12">{item.title}</h2>
         <div className="relative bg-white border py-4 px-2 rounded-xl mt-8 pt-8">
           <div className="absolute -top-8 h-16 w-16 mb-4 flex items-center justify-center rounded-full bg-gray-200">
-            <img className="h-14" src={item.pictureUrl} alt={item.title} />
+            <img className="h-14" src={`/categories/${item.category}.png`} alt={item.title} />
           </div>
           <div className="flex justify-between mb-2">
             <h4 className='font-semibold text-md'>{item.category}</h4>
@@ -48,18 +48,10 @@ export default function ItemDetail ({item}) {
           }
         </div>
       </div>
-      <div className="col-span-3 row-span-5 overflow-hidden rounded-xl">
-        <img src="/img/anne1.png" alt="Anne with an E" className="w-full h-full" />
-      </div>
-      <div className="col-span-4 row-span-5 overflow-hidden rounded-xl">
-        <img src="/img/ann2.png" alt="Anne with an E" className="w-full h-full" />
-      </div>
-      <div className="col-span-5 row-span-2"></div>
-      <div className="col-span-3 row-span-2 overflow-hidden rounded-xl">
-        <img src="/img/anne3.png" alt="Anne with an E" className="w-full h-full" />
-      </div>
-      <div className="col-span-4 row-span-2 overflow-hidden rounded-xl">
-        <img src="/img/anne4.png" alt="Anne with an E" className="w-full h-full" />
+      <div className="col-span-7">
+        <div>
+          <img className="rounded-xl" src={item.imgUrl} alt="" />
+        </div>
       </div>
     </div>
   </>)

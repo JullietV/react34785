@@ -16,6 +16,7 @@ export default function ItemDetailContainer () {
     const itemDB = await getItemFromAPI(id)
     setItem(itemDB)
     setIsLoading(false)
+    console.log(itemDB)
   }
 
   useEffect(() => {
