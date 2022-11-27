@@ -37,6 +37,7 @@ function App() {
           <div className='flex items-center justify-between max-w-7xl mx-auto relative h-[300px]'>
             <img className='w-full absolute bottom-0' alt="" src="/img/footer-bg.svg" />
             <img className='absolute bottom-14 right-[17%]' alt="dog with a lease in its mouth" src='/img/footer-dog.png' />
+            <p className='absolute w-full bottom-2 text-center font-bold'>Hecho con 💕 por Jénnifer Villalobos</p>
           </div>
         </footer>
         <div className='block lg:hidden'>
