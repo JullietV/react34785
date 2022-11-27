@@ -3,7 +3,7 @@ import CartWidget from './CartWidget';
 
 function NavBar () {
   return (
-    <div className='bg-[#F2FFFD] fixed w-full py-2 px-4'>
+    <div className='bg-[#F2FFFD] fixed w-full py-2 px-4 z-[9999]'>
       <nav className='flex w-full items-center justify-between max-w-6xl mx-auto'>
         <h1 className='text-xl font-semibold'>
           <Link to="/">
