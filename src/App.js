@@ -3,6 +3,7 @@ import Page404 from './components/404';
 import AddProducts from './components/AddProducts';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
+import EmptyState from './components/commons/EmptyState';
 import ItemDetailContainer from './components/Items/ItemDetailContainer';
 import ItemListContainer from './components/Items/ItemListContainer';
 import Landing from './components/landing';
@@ -14,10 +15,10 @@ function App() {
     <div className="App">
       <ContextProvider>
         <BrowserRouter>
-          <header className="App-header">
+          <header className="App-header hidden lg:block">
             <NavBar />
           </header>
-          <main className='min-h-[75vh]'>
+          <main className='min-h-[75vh] hidden lg:block'>
             <div className='pt-24 mx-auto max-w-6xl'>
               <Routes>
                 <Route path="/" element={<Landing />} />
@@ -32,12 +33,19 @@ function App() {
             </div>
           </main>
         </BrowserRouter>
-        <footer className='mt-14'>
+        <footer className='mt-14 hidden lg:block'>
           <div className='flex items-center justify-between max-w-7xl mx-auto relative h-[300px]'>
             <img className='w-full absolute bottom-0' alt="" src="/img/footer-bg.svg" />
             <img className='absolute bottom-14 right-[17%]' alt="dog with a lease in its mouth" src='/img/footer-dog.png' />
           </div>
         </footer>
+        <div className='block lg:hidden'>
+          <EmptyState 
+            img="/img/sitting-empty.png" 
+            title="¡Visualizame en tu compu!"
+            subtitle="Actualmente Memento no está optimizado para visualizarse en dispositivos móviles"
+          />
+        </div>
       </ContextProvider>
     </div>
   );
