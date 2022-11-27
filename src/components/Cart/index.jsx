@@ -33,10 +33,10 @@ export default function Cart () {
         </>
       ) : (
         <EmptyState 
-          img="/img/cat.png" 
-          title="No hemos conseguido nada" 
-          subtitle="El gato se durmió encima de los archivos" 
-          textBtn="Volver al inicio"
+          img="/img/empty-cart.png" 
+          title="Tu carrito está vacío" 
+          subtitle="Añade productos para continuar con el checkout" 
+          textBtn="Ir a comprar"
           hrefBtn="/"
         />
       )}

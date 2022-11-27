@@ -27,7 +27,7 @@ code {
 }
 
 .btn-text {
-  @apply bg-white text-[#7A84DD] hover:bg-gray-100 py-2 px-4 rounded-md;
+  @apply bg-white text-[#7A84DD] hover:bg-gray-100 py-2 px-4 rounded-full;
 }
 
 .btn-icon {

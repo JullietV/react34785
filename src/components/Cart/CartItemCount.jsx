@@ -6,7 +6,7 @@ export default function CartItemCount ({count, handleAddCount, handleSubstractCo
 
 
   return (
-    <div className='flex justify-between items-center mt-4'>
+    <div className='flex justify-between items-center w-1/3'>
       <div>
         <div className="flex gap-2">
           <Button onClick={handleSubstractCount} type="icon">

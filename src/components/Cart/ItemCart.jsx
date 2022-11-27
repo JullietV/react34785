@@ -32,7 +32,7 @@ function ItemCart ({item, handleRemoveItem, handleSubstract, handleAdd}) {
         </span>)
       )}
       
-      <div className='flex justify-between items-center w-full mt-4'>
+      <div className='flex justify-between items-center w-full mt-4 gap-4'>
         <CartItemCount 
           stock={item.stock} 
           count={item.count} 
@@ -40,7 +40,7 @@ function ItemCart ({item, handleRemoveItem, handleSubstract, handleAdd}) {
           handleSubstractCount={handleSubstractCount} 
         />
         
-        <Button onClick={() => handleRemoveItem(item.id)} className="w-full" type="text">Eliminar del carrito</Button>
+        <Button onClick={() => handleRemoveItem(item.id)} className="" type="text">Eliminar del carrito</Button>
       </div>
     </div>
   )
