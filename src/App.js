@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Page404 from './components/404';
 import AddProducts from './components/AddProducts';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
@@ -25,6 +26,8 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/add-a-product" element={<AddProducts />} />
+
+                <Route path="*" element={<Page404 />} />
               </Routes>
             </div>
           </main>

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Loader from '../commons/Loader';
 import LoaderContainer from '../commons/LoaderContainer';
 import { getItemsFromAPI, getItemsFromAPIByCategory } from '../../services/firebase';
+import EmptyState from '../commons/EmptyState';
 
 export default function ItemListContainer () {
   const [items, setItems] = useState([])
@@ -40,12 +41,16 @@ export default function ItemListContainer () {
   return (
     <>
       {items && items.length ? 
-      <ItemList greeting={greeting} items={items} /> : 
-      <div className='w-full min-h-[75vh] flex flex-col justify-center items-center'>
-        <img src="/img/cat.png" alt="A cute cat" />
-        <h2 className='text-xl font-bold'>No hemos conseguido nada</h2>
-        <p>El gato se durmió encima de los archivos</p>
-      </div>}
+      <ItemList greeting={greeting} items={items} /> : (
+        <EmptyState 
+          img="/img/cat.png" 
+          title="No hemos conseguido nada" 
+          subtitle="El gato se durmió encima de los archivos" 
+          textBtn="Volver al inicio"
+          hrefBtn="/"
+        />
+      )
+      }
     </>
   )
 }
